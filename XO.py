@@ -95,6 +95,13 @@ def clear(btnsE):
     dash.configure(text=dor)
     win = False
 
+# About Window
+def about():
+    abotk = Tk()
+    abotk.mainloop()
+
+
+
 # Variables
 dor = "X"
 winner = ""
@@ -132,7 +139,7 @@ root = Tk()
 root.geometry("500x340")
 root.resizable(False, False)
 root.title("V[2] (X O) المطور العربي - لعبة")
-root.iconbitmap("H:\\Tutorials\\Tutorials\\X O Game\\tic-tac-toe.ico")
+root.iconbitmap("H:\\Tutorials\\Tutorials\\X O Game\\assets\\tic-tac-toe.ico")
 
 GFrame = Frame(root)
 GFrame.place(x=20, y=20)
@@ -186,7 +193,7 @@ rilab = Label(root, text="جميع الحقوق محفوظة ©", font=("Tajawal
 rilab.place(x=335, y=300)
 
 # About Window
-abo = Button(root, text="حول", bg=bgs[0], fg=fgs[0], font=("Tajawal", 18, 'bold'), command=lambda:clear(btns), cursor="hand2")
+abo = Button(root, text="حول", bg=bgs[0], fg=fgs[0], font=("Tajawal", 18, 'bold'), command=about, cursor="hand2")
 abo.place(x = 320, y=250, height=40, width=170)
 
 
