@@ -1,6 +1,5 @@
 from tkinter import *
-import webbrowser as wbe
-
+from tkinter import messagebox
 def play(btn):
     global dor
     global win
@@ -97,11 +96,8 @@ def clear(btnsE):
 
 # About Window
 def about():
-    abotk = Tk()
-    abotk.mainloop()
-
-
-
+    about = "لعبة (Tic Tac Toe) الأصدار 2.0 \n المطور العربي - جميع الحقوق محفوظة ©"
+    msg = messagebox.showinfo("حول اللعبة", message=about)
 # Variables
 dor = "X"
 winner = ""
@@ -179,7 +175,7 @@ clr.place(x = 320, y=80, height=40, width=170)
 thfra = Frame(root)
 thfra.place(x=320, y=135, width=170, height=100)
 
-thlab = Label(thfra, text="الأوضاع", font=("Tajawal", 14))
+thlab = Label(thfra, text="السمات", font=("Tajawal", 14))
 thlab.pack(fill=X)
 
 thbtn1 = Button(thfra, bg='#474442', command=lambda:chtheme('#474442', '#bfbfbf', 'black', 'white', 'gray', 'whitesmoke'), cursor="hand2")
