@@ -50,6 +50,14 @@ def play(btn):
             if btns[2]["text"] == 'X' or btns[2]["text"] == 'O':
                 wins(btns[6], btns[4], btns[2], btns[2]["text"])
 
+        for btnt in btns:
+            if btnt["text"] != "":
+                g += 1
+            if g == len(btns) and not win:
+                dash.configure(text = "تعادل")
+                t = True
+        g = 0
+
 def wins(win1, win2, win3, winner):
     global win
     win = True
@@ -96,7 +104,7 @@ def clear(btnsE):
 
 # About Window
 def about():
-    about = "لعبة (Tic Tac Toe) الأصدار 2.0 \n المطور العربي - جميع الحقوق محفوظة ©"
+    about = "لعبة (X O) الأصدار 2.1 \n المطور العربي - جميع الحقوق محفوظة ©"
     msg = messagebox.showinfo("حول اللعبة", message=about)
 # Variables
 dor = "X"
@@ -111,7 +119,7 @@ my = 5
 mx = 5
 FONT = ("Tajawal", 28)
 bgs = [
-    "#d9cec8",
+    "#d9cec8",    
     "#d9cec8",
     "gray"
 ]
@@ -122,20 +130,15 @@ fgs = [
     "whitesmoke"
 ]
 
-widths = [
-    4,
-]
-
-heights = [
-    1,
-]
+width = 4
+height = 1
 
 # Window settings
 root = Tk()
 root.geometry("500x340")
 root.resizable(False, False)
-root.title("V[2] (X O) المطور العربي - لعبة")
-root.iconbitmap("H:\\Tutorials\\Tutorials\\X O Game\\assets\\tic-tac-toe.ico")
+root.title("V[2.1] (X O) المطور العربي - لعبة")
+root.iconbitmap(".\\assets\\tic-tac-toe.ico")
 
 GFrame = Frame(root)
 GFrame.place(x=20, y=20)
@@ -144,7 +147,7 @@ btns = []
 
 for y in range(rows):
     for x in range(cols):
-        btn = Button(GFrame, width = widths[0], height = heights[0])
+        btn = Button(GFrame, width = width, height = height)
         btn.grid(row=y, column=x, padx=mx, pady=my)
         btns.append(btn)
 
